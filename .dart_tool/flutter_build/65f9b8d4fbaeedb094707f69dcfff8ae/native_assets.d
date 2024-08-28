@@ -1,0 +1,1 @@
+ /Users/benlehotay/VSCode\ projects/fortify_cards/.dart_tool/flutter_build/65f9b8d4fbaeedb094707f69dcfff8ae/native_assets.yaml: 
