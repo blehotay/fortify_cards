@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fortify_cards/card_collection/view/card_collection_page.dart';
 import 'package:fortify_cards/counter/counter.dart';
 import 'package:fortify_cards/home/home.dart';
 import 'package:fortify_cards/l10n/l10n.dart';
@@ -16,7 +17,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomePage(),
+      home: const CollectionPage(),
     );
   }
 }
