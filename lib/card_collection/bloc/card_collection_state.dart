@@ -9,8 +9,8 @@ class CardColectionState extends Equatable {
     this.status = PageStatus.inital,
   });
 
-  final List<FortifyCard> earnedCards;
-  final List<FortifyCard> purchasedCards;
+  final List<FortifyCard>? earnedCards;
+  final List<FortifyCard>? purchasedCards;
   final PageStatus status;
 
   CardColectionState copyWith({

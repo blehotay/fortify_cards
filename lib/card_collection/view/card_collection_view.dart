@@ -2,12 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fortify_cards/card_collection/bloc/card_collection_bloc.dart';
 import 'package:fortify_cards/card_collection/widgets/widgets.dart';
-import 'package:fortify_cards/counter/view/counter_page.dart';
 import 'package:fortify_cards/l10n/l10n.dart';
 import 'package:nes_ui/nes_ui.dart';
 
 class CardCollectionView extends StatelessWidget {
   const CardCollectionView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CardCollectionBloc, CardColectionState>(
+      builder: (context, state) {
+        if (state.status == PageStatus.inital ||
+            state.status == PageStatus.loading) {
+          const CircularProgressIndicator();
+        } else if (state.status == PageStatus.error) {
+          const Center(
+            child: Text('Error'),
+          );
+        } else {
+          const CardCollectionSuccess();
+        }
+        return Container();
+      },
+    );
+  }
+}
+
+class CardCollectionSuccess extends StatelessWidget {
+  const CardCollectionSuccess({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +50,7 @@ class CardCollectionView extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(8), // padding around the grid
           // itemCount: items.length, // total number of items
-          itemCount: earnedCards.length,
+          itemCount: 10,
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
@@ -38,7 +60,9 @@ class CardCollectionView extends StatelessWidget {
                   ),
                 );
               },
-              child: CardViewCollection(),
+              child: CardViewCollection(
+                  // cards: earnedCards,
+                  ),
             );
           },
         ));
@@ -46,13 +70,12 @@ class CardCollectionView extends StatelessWidget {
 }
 
 class CardViewCollection extends StatelessWidget {
-  const CardViewCollection({
+  CardViewCollection({
+    // required this.cards,
     super.key,
-    // required this.items,
   });
 
-  // final List<String> items;
-
+  // List<FortifyCard> cards;
   @override
   Widget build(BuildContext context) {
     // return CardViewFront();

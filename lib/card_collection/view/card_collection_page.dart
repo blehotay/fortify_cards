@@ -13,7 +13,7 @@ class CardCollectionPage extends StatelessWidget {
       create: (context) => CardCollectionBloc(
         cardRepository: context.read<CardRepository>(),
       )..add(const CardColectionRequested()),
-      child: const CardCollectionView(),
+      child: const CardCollectionSuccess(),
     );
   }
 }
