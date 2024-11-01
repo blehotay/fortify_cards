@@ -79,13 +79,14 @@ class FortifyCard extends Equatable {
     String? description,
     String? imageUrl,
     Color? borderColor,
+    Category? category,
   }) {
     return FortifyCard(
       title: title ?? this.title,
       description: description ?? this.description,
       imageUrl: imageUrl ?? this.imageUrl,
       borderColor: borderColor ?? this.borderColor,
-      category: category,
+      category: category ?? this.category,
     );
   }
 
