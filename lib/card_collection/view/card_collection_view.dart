@@ -34,7 +34,7 @@ class CardCollectionSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final earnedCards = context.read<CardCollectionBloc>().state.earnedCards;
+    // final earnedCards = context.read<CardCollectionBloc>().state.earnedCards;
     return Scaffold(
         appBar: AppBar(
           title: const Text(
